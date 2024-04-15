@@ -10,5 +10,4 @@ int main() {
     pi += 4.0 / (1.0 + x * x) * dx;
   }
   printf("%17.15f\n", pi);
-  //
 }
