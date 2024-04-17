@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
+#include <omp.h>
 
 int main() {
   int n = 50;
@@ -19,11 +20,12 @@ int main() {
   for (int i=1; i<range; i++) 
     offset[i] = offset[i-1] + bucket[i-1];
 
-#pragma omp parallel for
-  for (int i=0; i<range; i++) {
-#pragma omp parallel for
-    for (int j = offset[i]; j<offset[i] + bucket[i]; j++) {
-      key[j] = i;
+#pragma omp parallel for 
+  for (int i = 0; i < range; i++) {
+//#pragma omp parallel for 
+    for (int j = offset[i]; j < offset[i] + bucket[i]; j++) {
+        key[j] = i;
+        //printf("#%d\n", omp_get_thread_num());
     }
   }
 
