@@ -52,6 +52,6 @@ int main() {
     fx[i] -= _mm512_reduce_add_ps(fxvec);
     fy[i] -= _mm512_reduce_add_ps(fyvec);
   
-    printf("%d %g %g\n", i, fx[i], fy[i]);
+    printf("%d %g %g\n",i,fx[i],fy[i]);
   }
 }
