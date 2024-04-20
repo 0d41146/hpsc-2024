@@ -25,7 +25,7 @@ int main() {
     __m512 xivec = _mm512_set1_ps(x[i]);
     __m512 yvec = _mm512_load_ps(y);
     __m512 yivec = _mm512_set1_ps(y[i]);
-    //__m512 fxvec = _mm512_load_ps(fx); <- fy returns random value. Why?
+    //__m512 fxvec = _mm512_load_ps(fx); <- fy returns random value when i = 0. Why?
     __m512 fxvec = _mm512_setzero_ps();
     //__m512 fyvec = _mm512_load_ps(fy);
     __m512 fyvec = _mm512_setzero_ps();
