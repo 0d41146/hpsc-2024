@@ -112,15 +112,5 @@ int main() {
             }
         }
     }
-
-    FILE *fp = fopen("copy", "w");
-    for (int y = 0; y < ny; ++y) {
-        for (int x = 0; x < nx; ++x) {
-            fprintf(fp, "%.2f ", u[y*nx+x]);
-        }
-        fprintf (fp, "\n");
-    }
-    fclose(fp);
-
     return 0;
 }
